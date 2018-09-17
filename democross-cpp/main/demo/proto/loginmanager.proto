@@ -1,0 +1,39 @@
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.pubref.rules_protobuf.main.demo";
+option java_outer_classname = "LoginManagerProto";
+
+
+package loginmanager;
+
+// The login manager service definition.
+service LoginManager {
+  // Sends a rigest
+  rpc registerAccount (RegisterRequest) returns (RegisterReply) {}
+  // Send a login
+  rpc loginAccount (LoginRequest) returns (LoginReply) {}
+}
+
+// The request message containing the user's name, a signal password.
+message RegisterRequest {
+  string name = 1;
+  string signal_pwd = 2;
+}
+
+// The response message containing the greetings
+message RegisterReply {
+  string message = 1;
+}
+
+// The request message containing the user's name.
+message LoginRequest {
+  string name = 1;
+  string signal_pwd = 2;
+}
+
+// The response message containing the greetings
+message LoginReply {
+  string message = 1;
+}

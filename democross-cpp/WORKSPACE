@@ -1,0 +1,28 @@
+
+workspace(name = "org_pubref_rules_protobuf")
+
+#load("//protobuf:rules.bzl", "github_archive")
+
+# ================================================================
+# Specific Languages Support
+# ================================================================
+
+load("//protobuf:rules.bzl", "proto_repositories")
+
+proto_repositories()
+
+load("//cpp:rules.bzl", "cpp_proto_repositories")
+
+cpp_proto_repositories()
+
+#new_git_repository(
+#    name = "mysql_connector_repo",
+#    remote = "https://github.com/mysql/mysql-connector-cpp",
+#    tag= "8.0.12",
+#    build_file = "mysql_connector.BUILD",
+#)
+
+#bind(
+#    name = 'connector',
+#    actual = '@mysql_connector_cpp//:sql_connector',
+#)
